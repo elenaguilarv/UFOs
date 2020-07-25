@@ -21,16 +21,13 @@ function buildTable(data) {
 // Each value as a table cell (td)
 // (val) = we want one object into their own row of data
     Object.values(dataRow).forEach((val) => {
-    });
 // Append each object value to a cell in a table
       let cell = row.append("td");
 // Holds only each value from the object, not the key
       cell.text(val);
       }
-    );
-  });
-}
-
+);
+    });
 // Create a function using D3 to filter through data with the click of a button
 // The function will run each time the filter button is clicked
 function handleClick() {
@@ -42,8 +39,8 @@ function handleClick() {
 // Check if date was entered and filter data using that date
 // Filter = keepp rows where datetime value matches filter value
   if (date) {
-	filteredData = filteredData.filter(row => row.datetime === date);
-} 
+    filteredData = filteredData.filter(row => row.datetime === date);
+}
 // Build a table using filtered data
 buildTable(filteredData);
 }
