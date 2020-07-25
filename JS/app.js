@@ -9,7 +9,6 @@ var tbody = d3.select("tbody");
 function buildTable(data) {
     // Clear out any existing/filtered data 
   tbody.html("");
-  }
 
 // Loop through each object in the data
 // Append a row and cells for each value in the row
@@ -27,7 +26,8 @@ function buildTable(data) {
       cell.text(val);
       }
 );
-    });
+    }); 
+}
 // Create a function using D3 to filter through data with the click of a button
 // The function will run each time the filter button is clicked
 function handleClick() {
@@ -42,10 +42,10 @@ function handleClick() {
     filteredData = filteredData.filter(row => row.datetime === date);
 }
 // Build a table using filtered data
-buildTable(filteredData);
+  buildTable(filteredData);
 }
 // call D3 to listen to event filter-btn through "click"
 d3.selectAll("#filter-btn").on("click", handleClick);
 
 // Build the table when the page loads
-buildTable(filteredData);
+buildTable(tableData);
